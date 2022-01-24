@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <!-- linking external css -->
+    <link rel="stylesheet" href="style.css">
+    <title>Resume Generator</title>
+</head>
+
+<body>
+
+
+    <div id="divMain1" class="container ">
+
+        <h1 id="header1" class="text-center mb-3">RESUME GENERATOR</h1>
+
+        <div id="showTem" class="text-center">
+            <button onclick="showT()" class="btn btn-success"> View Template</button>
+        </div>
+
+        <form>
+            <!-- label name  -->
+            <div class="mb-4">
+                <label for="nameInput" class="form-label"><b>Name</b></label>
+                <input type="text" class="form-control" id="nameInput" placeholder="Enter your name">
+            </div>
+
+          
+            <!-- label phone  -->
+            <div class="mb-4">
+                <label for="phoneInput" class="form-label"><b>Phone Number</b></label>
+                <input type="number" class="form-control" id="phoneInput" placeholder="Enter your phone">
+            </div>
+
+           
+            <!-- label email  -->
+            <div class="mb-4">
+                <label for="emailInput" class="form-label"><b>Email address</b></label>
+                <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp"
+                    placeholder="Enter your email">
+            </div>
+
+            <!-- about yourself  -->
+            <div class=" mb-3">
+                <label for="careerObjectiveInput" class="form-label"><b>Career Objective</b></label>
+                <textarea id="aboutInput" class="md-textarea form-control" rows="3"
+                    placeholder="Enter Career Objective"></textarea>
+            </div>
+
+            <!-- linkedIn link  -->
+            <div class="mb-4">
+                <label for="linkedinInput" class="form-label"><b>LinkedIn</b></label>
+                <input type="url" class="form-control" id="linkedinInput" placeholder="Enter your LinkedIn profile">
+            </div>
+
+            <!-- github link  -->
+            <div class="mb-4">
+                <label for="githubInput" class="form-label"><b>Github</b></label>
+                <input type="url" class="form-control" id="githubInput" placeholder="Enter your Github profile">
+            </div>
+
+             <!-- geeksforgeeks link  -->
+             <div class="mb-4">
+                <label for="geekInput" class="form-label"><b>GeeksforGeeks</b></label>
+                <input type="url" class="form-control" id="geekInput" placeholder="Enter your GeeksforGeeks profile">
+            </div>
+           
+            <!-- Skills  -->
+            <div id="divOfSkills" class="mb-4">
+                <label for="" class="form-label"><b>Skills</b></label>
+                <input type="text" class="form-control mb-2 classOfSkills" placeholder="Enter your skill">
+
+                <div id="divOfAddingSkills" class="">
+                    <button type="button" onclick="addSkills()" class="btn btn-success"> add more skills</button>
+                </div>
+            </div>
+
+            <!-- Languages  -->
+            <div id="divOfLanguages" class="mb-4">
+                <label for="" class="form-label"><b>Languages</b></label>
+                <input type="text" class="form-control mb-2 classOfLang" placeholder="Enter language">
+
+                <div id="divOfAddingLang" class="">
+                    <button type="button" onclick="addLang()" class="btn btn-success"> add more languages </button>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div id="divOfEducation" class="mb-4">
+                <label for="" class="form-label"><b>Education</b></label>
+                <div class="mb-4 divofedu">
+                    <input  type="text" class="form-control mb-1" placeholder="Enter Educational Qualification">
+                    <input  type="text" class="form-control mb-1" placeholder="Enter School/University">
+                    <input  type="text" class="form-control mb-1 w-50" placeholder="Enter Year of Completion">
+                </div>
+                <div id="addEducation" class="">
+                    <button type="button" onclick="addEdu()" class="btn btn-success"> add more education </button>
+                </div>
+            </div>
+
+
+
+
+            <!-- experience  -->
+            <div id="WEmain" class="mb-4">
+                <label for="" class="form-label"><b>Work history</b></label>
+                <div class="mb-4 divofexp">
+                    <input type="text" class="form-control mb-1" placeholder="Enter your position">
+                    <input type="text" class="form-control mb-1" placeholder="Enter Organisation Name">
+
+                    <input type="text" class="form-control mb-1 w-25" placeholder="Enter Start date">
+                    <input type="text" class="form-control mb-1 w-25" placeholder="Enter End date">
+
+                </div>
+
+                <div id="WEadd" class="">
+                    <button type="button" onclick="addWE()" class="btn btn-success"> add more experience </button>
+                </div>
+            </div>
+
+            <!-- projects  -->
+            <div id="projectMain" class="mb-4">
+                <label for="" class="form-label"><b>Projects</b></label>
+                <div class="mb-4 divofpro">
+                    <input type="text" class="form-control mb-1" placeholder="Enter project name">
+                    <textarea id="" class="md-textarea form-control mb-1" rows="2"
+                        placeholder="Enter description about the project"></textarea>
+                    <input type="url" class="form-control mb-1" placeholder="Enter project link">
+                </div>
+
+                <div id="projectAdd" class="">
+                    <button type="button" onclick="addProjects()" class="btn btn-success"> add more projects </button>
+                </div>
+
+            </div>
+
+
+            <!-- Submit  -->
+            <div  class=" text-center mb-4">
+                <button id="submitButton" onclick="generate()" type="button" class="btn btn-primary btn-lg ">Generate Resume</button>
+            </div>
+
+
+        </form>
+
+    </div>
+
+
+    <!-- template code here  -->
+    <div id="divMain2" class="container">
+
+        <div id="goBack" class="mt-1">
+           <button onclick="goback()" class="btn btn-secondary"> Back </button> 
+        </div>
+        <!-- Name and contact details -->
+        <div id="nameDiv" class="text-center mt-1 mb-0">
+           <h1 id="name" class="m-0 fw-bold">  Your name</h1> 
+            <span id="email"> email</span>
+            <span> | </span>
+            <span id="phone"> phone number</span>
+        </div>
+        <hr>
+
+
+        <!-- Career objective -->
+        <div id="career" class=" mb-2">
+            <label class="form-label px-3 pt-1"> <b><u> Career Objective</u></b></label>
+            <div id="objective" class="card-body form-control pt-1 pb-2">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae itaque cum, illo sit consequatur
+                aut? Sapiente architecto blanditiis et illo praesentium odio officiis quaerat ut expedita, dolor ipsam,
+                qui consectetur?
+            </div>
+        </div>
+
+        <!-- Skills and Technologies -->
+        <div id="skills" class="mb-2">
+            <label class="form-label px-3 pt-1 mb-1 "> <b> <u> Skills/Tools/Technologies</u></b></label>
+            <div id="divoftemskill" class="card-body form-control pt-1 pb-2">
+              <!-- <span> <span> <b>*</b> </span> JAVA<span> </span> &nbsp &nbsp   </span>  -->
+             <ul id="ulofskill">
+                 
+             </ul>
+            </div>
+        </div>
+        <!-- Languages -->
+        <div id="lang" class="mb-2">
+            <label class="form-label px-3 pt-1 mb-1 "> <b> <u> Languages</u></b></label>
+            <span id="temlang" class="card-body form-control pt-1 pb-2">
+                <!-- <span> English &nbsp</span> -->
+            </span>
+        </div>
+
+        <!-- Links -->
+        <div id="links" class="mb-2">
+            <label class="form-label px-3 pt-1 mb-1"> <b><u> Links</u></b></label>
+            <div id="cardLink" class="card-body form-control pt-1 pb-2">
+                <small> <span> <b>LinkedIn : </b> </span> </small> <a id="linkedIn"
+                    href=""></a> <br>
+                <small> <span> <b>Github : </b> </span> </small> <a id="Github"
+                    href=""></a> <br>
+                <small> <span> <b>GeeksForGeeks : </b> </span> </small> <a id="geeks"
+                    href=""></a>
+            </div>
+        </div>
+
+        <!-- work experience -->
+        <div id="work" class="mb-2">
+            <label class="form-label px-3 pt-1 mb-1"> <b><u> Work History</u></b></label>
+            <ul id="ulofwork">
+                <!-- <li>
+                    <div  class="card-body form-control pt-1 pb-2">
+                        <span class="fw-bold"> Java Teacher  </span><span> at </span><span > Edugene Institute,
+                            Gorakhpur</span> <br>
+                        <small> <span > March 2020</span><span> - </span>  <span > Present</span> </small>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+
+        <!-- education -->
+        <div id="edu" class="mb-2">
+            <label class="form-label px-3 pt-1 mb-1"> <b><u> Educational Qualifications</u></b></label>
+            <ul id="ulofedu">
+                <!-- <li>
+                    <div  class="card-body form-control pt-1 pb-2">
+                         <span class="fw-bold"> B.tech Computer Science</span><span> from </span><span > MMMUT</span>
+                        <br>
+                        <small><span class="fw-bold">Completion Year : </span> <span > 2023</span> </small>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+
+        <!-- projects -->
+        <div id="pro" class="mb-2">
+            <label class="form-label px-3 pt-1 mb-1"> <b><u> Projects</u></b></label>
+            <ul id="ulofpro">
+                <!-- <li>
+                    <div  class="card-body form-control pt-1 pb-2">
+                        <span class="fw-bold"> Resume generator</span> <span> : </span> 
+                        <span > Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, dolorum?
+                            At expedita eveniet, dicta possimus earum accusamus sapiente cumque esse.</span>
+                        <br>
+                        <small>  <span class="fw-bold"> Project Link : </span> </small>
+                        <a href="#" >www.resumegenerator.com</a>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-primary btn-lg ">Print</button>
+        </div>
+    </div>
+   
+
+    <!-- default javascript cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
