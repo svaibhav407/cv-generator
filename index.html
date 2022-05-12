@@ -25,11 +25,11 @@
             <button onclick="showT()" class="btn btn-success"> View Template</button>
         </div>
 
-        <form>
+        <form  name = "myForm" >
             <!-- label name  -->
             <div class="mb-4">
                 <label for="nameInput" class="form-label"><b>Name</b></label>
-                <input type="text" class="form-control" id="nameInput" placeholder="Enter your name">
+                <input type="text" class="form-control" id="nameInput" placeholder="Enter your name" >
             </div>
 
           
@@ -144,7 +144,7 @@
 
             <!-- Submit  -->
             <div  class=" text-center mb-4">
-                <button id="submitButton" onclick="generate()" type="button" class="btn btn-primary btn-lg ">Generate Resume</button>
+                <button id="submitButton" onclick="validate()" type="button" class="btn btn-primary btn-lg ">Generate Resume</button>
             </div>
 
 
@@ -256,7 +256,7 @@
         </div>
 
         <div class="text-center">
-            <button class="btn btn-primary btn-lg ">Print</button>
+            <button class="btn btn-primary btn-lg " onclick="printout()">Print</button>
         </div>
     </div>
    
